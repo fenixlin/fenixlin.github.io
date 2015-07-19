@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Machine Learning (from Coursera) Summary | Fenix Lin&#39;s Nest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="(本文最后修改于2015/3/10)
+(花了两个月闲暇时间学习的课程，就在这里总结给你看&amp;v&lt;!)机器学习，主要是通过一个训练过程去优化某个衡量指标(这里称cost function)，最终实现与之相关的目标。这门课上提到的算法都是静态的。只着眼于一次采样。要通过一次训练尽可能好地拟合真实函数。为简洁起见以下不说明任何符号含义，最后才附上说明。
+有监督学习
+有监督学习可以做分类和估值。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning (from Coursera) Summary">
+<meta property="og:url" content="http://yoursite.com/2014/10/18/Machine_Learning_with_Andrew_Ng/">
+<meta property="og:site_name" content="Fenix Lin's Nest">
+<meta property="og:description" content="(本文最后修改于2015/3/10)
+(花了两个月闲暇时间学习的课程，就在这里总结给你看&amp;v&lt;!)机器学习，主要是通过一个训练过程去优化某个衡量指标(这里称cost function)，最终实现与之相关的目标。这门课上提到的算法都是静态的。只着眼于一次采样。要通过一次训练尽可能好地拟合真实函数。为简洁起见以下不说明任何符号含义，最后才附上说明。
+有监督学习
+有监督学习可以做分类和估值。">
+<meta property="og:image" content="http://i61.tinypic.com/2h83jh5.jpg">
+<meta property="og:image" content="http://i61.tinypic.com/20ji9ur.jpg">
+<meta property="og:image" content="http://i61.tinypic.com/212v1vl.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Machine Learning (from Coursera) Summary">
+<meta name="twitter:description" content="(本文最后修改于2015/3/10)
+(花了两个月闲暇时间学习的课程，就在这里总结给你看&amp;v&lt;!)机器学习，主要是通过一个训练过程去优化某个衡量指标(这里称cost function)，最终实现与之相关的目标。这门课上提到的算法都是静态的。只着眼于一次采样。要通过一次训练尽可能好地拟合真实函数。为简洁起见以下不说明任何符号含义，最后才附上说明。
+有监督学习
+有监督学习可以做分类和估值。">
+
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars2.githubusercontent.com/u/4312139?v=2&amp;s=150" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Fenix Lin</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">My Tech Sumup for Computer Science. Welcome!</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/resume">简历</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/github.com/fenixlin" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/weibo.com/fenixl" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/www.zhihu.com/people/lin-jing-hao-17" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="/fenixlin@yandex.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Algorithm/" style="font-size: 10.00px;">Algorithm</a><a href="/tags/Coursera/" style="font-size: 20.00px;">Coursera</a><a href="/tags/Machine-Learning/" style="font-size: 10.00px;">Machine Learning</a><a href="/tags/Mathematics/" style="font-size: 10.00px;">Mathematics</a><a href="/tags/Summary/" style="font-size: 10.00px;">Summary</a><a href="/tags/hexo/" style="font-size: 20.00px;">hexo</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Fenix Lin</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars2.githubusercontent.com/u/4312139?v=2&amp;s=150" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Fenix Lin</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">My Tech Sumup for Computer Science. Welcome!</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/resume">简历</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/github.com/fenixlin" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/weibo.com/fenixl" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/www.zhihu.com/people/lin-jing-hao-17" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/fenixlin@yandex.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Machine_Learning_with_Andrew_Ng" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/10/18/Machine_Learning_with_Andrew_Ng/" class="article-date">
+  	<time datetime="2014-10-18T12:55:18.000Z" itemprop="datePublished">Oct 18th 14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Machine Learning (from Coursera) Summary
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coursera/">Coursera</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>(本文最后修改于2015/3/10)</em></p>
+<p>(花了两个月闲暇时间学习的课程，就在这里总结给你看>v&lt;!)<br>机器学习，主要是通过一个训练过程去优化某个衡量指标(这里称<strong><em>cost function</em></strong>)，最终实现与之相关的目标。<br>这门课上提到的算法都是静态的。只着眼于一次采样。要通过一次训练尽可能好地拟合真实函数。<br>为简洁起见以下不说明任何符号含义，最后才附上说明。</p>
+<h2 id="有监督学习">有监督学习</h2>
+<p>有监督学习可以做分类和估值。</p>
+<a id="more"></a>
+<p><strong>线性回归</strong><br>线性回归已经假设真实函数(目标函数)是线性的。<br>$h_\theta(\mathbf{x}_i) = \boldsymbol{\theta}^T\mathbf{x}_i$ ， $\mathbf{h_\theta(X)} = \boldsymbol{X\theta}$<br>用到的cost function:<br>$J(\boldsymbol{\theta}) = \frac{1}{2n}(h_\theta(\mathbf{X})-\mathbf{y})^.2 + \lambda(\boldsymbol{\theta}_{-0})^.2$<br>最优化cost方法1 —— 多次<strong><em>gradient descent</em></strong>求解:<br>$\boldsymbol{\theta’} = \boldsymbol{\theta}-\alpha\frac{\partial}{\partial\boldsymbol{\theta}}J(\boldsymbol{\theta}) = \boldsymbol{\theta}-\alpha\frac{1}{n}(\mathbf{X}(h_\theta(\mathbf{X})-\mathbf{y})+\lambda\boldsymbol{\theta}_{-0})$<br>最优化cost方法2 —— 数学直接求解<strong><em>normal equation</em></strong>:<br>$\boldsymbol{\theta} = (\mathbf{X}^T\mathbf{X}+\lambda\mathbf{1}_{-0})^{-1}\mathbf{X}^T\mathbf{y}$<br>另外octave/matlab中还有类似fminunc等最优化函数可以直接求解。</p>
+<p>线性回归是估值用的。$\lambda(\boldsymbol{\theta}_{-0})^.2$项是为了避免Overfitting的<strong><em>regularization项</em></strong>。<br>规模比较大的数据，用gradient descent。规模比较小的数据，或者需要验证，用normal euqation，因为它计算逆矩阵要$O(n^3)$，计算量大。<br>注意normal equation还要保证特征之间独立才会有逆矩阵，否则只能用伪逆代替</p>
+<p><strong>逻辑回归</strong><br>给回归函数套一个函数，保证值域是[0,1] :<br>$h_\theta(\mathbf{x}_i) = sigmoid(\boldsymbol{\theta}^T\mathbf{x}_i)$，其中$sigmoid(z) = \frac{1}{1+e^{-z}}$。<br>用到的cost function：<br>$J(\boldsymbol{\theta}) = -\frac{1}{n}[\mathbf{y}^Tlog(\mathbf{h}_\theta(\mathbf{X}))+(\mathbf{1-y})^Tlog(\mathbf{1-h}_\theta(\mathbf{X}))] + \frac{\lambda}{2n}(\boldsymbol{\theta}_{-0})^.2$<br>最优化cost的方法和线性回归一样，不赘述。</p>
+<p>逻辑回归是分类用的（或者说结果集比较有限的估值）。<br>cost function作出的改变，是为了保证它是单峰的凸函数。<br>对于分多类的情况，每次训练一类，得到一个$h_{\theta_i}(\mathbf{X})$，然后求$argmax\{i,h_{\theta_i}(\mathbf{X})\}$就好了。</p>
+<p><strong>高斯回归</strong><br>多维高斯回归由均值矢量和协方差矩阵决定：<br>$p(\mathbf{x};\boldsymbol{\mu,\Sigma}) = \frac{1}{(2\pi)^{\frac{n}{2}}|\boldsymbol{\Sigma}|^{\frac{1}{2}}}exp(-\frac{1}{2}(x-\boldsymbol{\mu})^T\boldsymbol{\Sigma}^{-1}(x-\boldsymbol{\mu}))$<br>公开课里面是用Anomaly Detection这个大例子带出的，$p(\mathbf{x};\boldsymbol{\mu,\Sigma})&lt;\epsilon$为异常。应用于异常例子相当少的情况（类似工业界6$\sigma$保证）。应对方法是训练集全是“正常”。cv集有少部分“异常”，以训练合适的置信度参数$\epsilon$。</p>
+<p><strong>Support Vector Machine</strong><br>SVM本身是建立在线性分类器上的。不过相较于逻辑回归用的sigmoid函数，SVM在超过一定界限就会直接为0了。类似：<br>$cost_0(\boldsymbol{\theta}^T\mathbf{x}_i) = \boldsymbol{\theta}^T\mathbf{x}\le{-1}\ ?\ -(\boldsymbol{\theta}^T\mathbf{x}+1)：0$。<br>用到的总cost function：<br>$J(\boldsymbol{\theta}) = -C[\mathbf{y}^Tcost_0(\boldsymbol{\theta}^Tf(\mathbf{x}))+(\mathbf{1-y})^Tcost_1(\boldsymbol{\theta}^Tf(\mathbf{x}))] + \frac{\lambda}{2}(\boldsymbol{\theta}_{-0})^{.2}$<br>这样相比于逻辑回归，可以保证分类的分界线与所分两类的距离最大(又称Large Margin Classifier)</p>
+<p>为了解决线性不可分问题，引入核函数(也称similarity function)。核函数本质上是将输入之间的关系从低维空间投射到高维空间来看待，并得到一个输出来描述其关系远近，表现出的是$\mathbf{X\cdot X}\to\mathcal{ R}$。具体做法是将带有两个向量的式子（相减，相乘等），代入可以傅里叶变换或其他变换变为高维乃至无穷维函数的某个函数（投射函数）得出输出。这个式子相当于变换后高维函数前面的系数。投射函数不变整个问题还是线性可解的。<br>上面$f(\mathbf{r})=\mathbf{r}$的是线性核。也可以用高斯核(也叫squared exponential kernel)：$exp(-\frac{\mathbf{r}^2}{2\sigma^2})$<br>相较于逻辑回归，适用于样本较少的情况。特征相比样本数数量越少，需要使用的核一般越复杂。</p>
+<p><strong>神经网络</strong><br><img src="http://i61.tinypic.com/2h83jh5.jpg" alt=""><br>神经网络一般三种层：input，output，hidden(中间层)，联合而成一个非线性假设。hidden / output每个节点都有：<br>$a^{(i)}_j=g(\boldsymbol{\theta}^{(i-1)}_ja^{(i-1)})$，课程用$g(x)=sigmoid(x)$为例，称为sigmoid <strong><em>activation function</em></strong><br>用到的cost function：<br>$J(\boldsymbol{\theta}) = -\frac{1}{n}[\mathbf{Y}^Tlog(\mathbf{H}_\theta(\mathbf{X}))+(\mathbf{1-Y})^Tlog(\mathbf{1-H}_\theta(\mathbf{X}))] + \frac{\lambda}{2n}\sum_{i=1}^{L-1}(\boldsymbol{\Theta}_{-0})^.2$<br>调整方法是back propagation:<br>$\frac{\partial}{\partial\boldsymbol{\Theta}^{(l)}}J(\boldsymbol{\Theta})=\frac{1}{n}\sum_i\mathbf{a}^{(l)}\boldsymbol{\delta}^{(l+1)}+\lambda\boldsymbol{\Theta_{-0}}^{(l)}$，其中要递推求$\boldsymbol{\delta}^{(l)}=\boldsymbol{\Theta}^{(l)}\boldsymbol{\delta}^{(l+1)}$，$\boldsymbol{\delta}^{(L)}=\mathbf{y-a^{(L)}}$<br>可以用数学方法验证整个计算并调整过程的对错:<br>$\frac{d}{d\theta}J(\theta)\approx\frac{J(\theta+\epsilon)-J(\theta-\epsilon)}{2\epsilon}$<br>在开始训练之前要对所有$\Theta$在$[-\epsilon,\epsilon]$里面随机一下。如果全0初始化，会产生对称性，每个点的$\boldsymbol{\theta}$都一样的。<br>神经网络一般只有三层，hidden如有多层，各层的点数一般相同。<br>注意cost function和逻辑回归不同之处在，前一项要考虑多个output，后一项要考虑每一层的矩阵。</p>
+<p><strong>协同过滤</strong><br>从recommender system引申出来的一类算法。推荐系统里面有user，有item，要预估user对item的评分，从而进行统计、分类和推荐。<br>对每个user建模，就有参数$\theta$需要训练。对每个item建模，建有参数$x$需要训练。<br>协同过滤的思想，就在于$\theta$和$x$可以轮流改进，或一起学习。<br>以线性回归代价函数为例，考虑两个代价函数合并<br>$J(\boldsymbol{\theta}) = \frac{1}{2n}(h_\theta(\mathbf{X})-\mathbf{y})^.2 + \lambda(\boldsymbol{\theta}_{-0})^.2$，$J(\boldsymbol{x}) = \frac{1}{2m}(h_x(\mathbf{\Theta})-\mathbf{y})^.2 + \lambda(\boldsymbol{x}_{-0})^.2$<br>有<br>$J(\boldsymbol{\Theta,X}) = \frac{1}{2}(\mathbf{X\Theta^T}-\mathbf{Y})^.2+ \frac{\lambda}{2}(\boldsymbol{X}_{-0})^.2 + \frac{\lambda}{2}(\boldsymbol{\Theta}_{-0})^.2$<br>所以参数随机初始化一下之后就可以像线性回归一样训练了。注意为了防止某行某列完全没有评分数据，必须整个矩阵进行mean normalization。</p>
+<p><strong>参数调整</strong><br>线性回归中，如果$\alpha$太大，会overfitting，现象就是cost越来越大程序无法停止。太小又会跑得慢。<br>因此使用<strong><em>Grid Search</em></strong>，0.01, 0.03, 0.1, 0.3这样下去，直到回归速度足够快而又不过头。</p>
+<h2 id="无监督学习">无监督学习</h2>
+<p>无监督学习的数据都是没有标号的，也就是没有拿来监督的$\mathbf{y}$。其学习目的是找出数据的潜在结构，比如做分类。</p>
+<p><strong>K-Means</strong><br>算法伪代码如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">分类点向量mu随机化(分别选K个输入点作为分类点)</div><div class="line"><span class="keyword">while</span> (<span class="number">1</span>):</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(N):</div><div class="line">        x[i]的类别c[i] := 离x[i]最近的mu[i]的类别</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(N):</div><div class="line">        mu[i] := 目前所有和mu[i]同类别的x[i]的均值</div><div class="line">    <span class="keyword">if</span> (mu前后差异小于置信值) <span class="keyword">break</span></div></pre></td></tr></table></figure>
+
+<p>要优化的cost function就是离各自中心距离的总和:<br>$J(c,\mu)=\frac{1}{n}\sum_{i=1}^{n}|x-\mu_{c^{(i)}}|^2$</p>
+<p>为了保证算法不陷入局部最优值，最好是跑多几次选最优，保证不会被随机害死。<br>而要选择分类的数量K，一种方法是尝试过多个K后画出如下的图。图示“肘”位是最好的点。如果没有“肘”这种方法就无效了。<br><img src="http://i61.tinypic.com/20ji9ur.jpg" alt=""></p>
+<h2 id="整体策略">整体策略</h2>
+<p>先用简单的算法，基础的数据集进行学习和分析，并检查错误点，看更多的数据、更多的特征、更复杂的模型和其他的预处理或是否有用，改进什么方向会更有效。</p>
+<p>一般来说，对于人类专家本身能处理的问题，只要数据集够大，并使用相对复杂的模型，都会有不错的效果。</p>
+<p><strong>输入前的处理</strong><br>各个特征值域不同，要做Feature Scaling(下式分母)与Mean Normalization(下式分子):<br>$\mathbf{x’} = \frac{\mathbf{x}-\nu}{\mathbf{x_{max}}-\mathbf{x_{min}}} \approx \frac{\mathbf{x}-\nu}{s}$</p>
+<hr>
+<p>为了减少运算量，压缩数据，画图分析，可以使用PCA方法降维。</p>
+<blockquote>
+<p>协方差矩阵$\Sigma = \frac{1}{n}\mathbf{X^TX}$<br>用svd分解计算特征值 $[U, S, V] = svd(\Sigma)$ (因为$\Sigma$肯定是半正定矩阵)<br>新的输入集$Z = \sigma_k(U)^TX$，其中$\sigma_k(U)$是取$U$的前$k$列</p>
+</blockquote>
+<p>将m维降至k维，核心思想是找到一个k维的平面，使输入集X所有点离平面距离总和(projection error)最小。<br>k应该选择满足$\frac{\frac{1}{n}\sum_{i=1}^n|x^{(i)}-x_{approx}^{(i)}|^2}{\frac{1}{n}\sum_{i=1}^{n}|x^{(i)}|^2}=1-\frac{\sum_{i=1}^kS_{ii}}{\sum_{i=1}^nS_{ii}}\le(1-置信度)$，式子表达PCA造成的方差占总方差的部分，思想是要保证方差差异不大。其中$S_{ii}$是svd分解中S对角线上的元素，$x_{approx}=\sigma_k(U)Z$则是从PCA里面恢复的原值。<br>但是注意不要将PCA方法应用于缓解over-fitting的场合，因为regularization已经做得更好。而且最好是不用PCA不行(比如时间、内存不够)才应用PCA，否则用PCA挺浪费时间精力的。</p>
+<p>注意Feature Scaling，Mean Normalization的参数，以及PCA的svd分解应该都只从训练集中获取。然后再把相同的映射运用到训练集，cv集和测试集中。</p>
+<p><strong>大规模数据的计算</strong><br>主要思路是</p>
+<blockquote>
+<p>1.使用灵活度比较高，有通过数据来进行改进的空间的模型<br>2.将算法改进为每次只需要一组或几组输入来训练<br>3.利用map-reduce等大规模数据运算框架（其本质是牺牲排序和读写文件的时间，来切分数据并统筹整个计算机集群进行运算）来训练。</p>
+</blockquote>
+<p>以gradient descent为例，特征数量m作为外层循环的是<strong>batch gradient descent</strong>，必须循环完所有采样点才能做一次gradient，效率是O(nm)，优点是图示来看每次改进都非常”直接明了”。<br>可以改为<strong>stochastic gradient descent</strong>，采样点数n作为外层循环，这样可以并发处理、在线处理，也可能没扫完所有采样点就达到置信度标准。效率变成O(nm/k)。<br>同理，<strong>mini-batch gradient descent</strong>是两者结合，每w个一组，组内进行batch gradient descent，组间stochastic gradient descent。</p>
+<p><strong>对算法作评估及后续调整</strong><br>从训练集中：<br>取出一部分作为test set。以客观评估算法，预测在真实大规模数据中的准确度/置信度。<br>取出一部分作为cross validation set，如果除了训练以外还有东西要选择的话。如不同的超参、特征个数、模型等等。</p>
+<hr>
+<p>一般的指标有方差等，统计学方面还有$R^2$，F检验等。<br>还有指标$Accuracy = \frac{所有分类准确的预测个数}{总样本个数}$<br>对于训练集中函数值偏向比较严重的情况(如分类中大多偏向于某一类)：<br>定义$Precison = \frac{某分类准确的预测个数}{同一分类的预测个数}$，$Recall=\frac{某分类准确的预测个数}{同一分类的实际样本个数}$（可理解为命中率和发现率），这两个没法做到同时很高<br>所以可以用$F_1 = 2\frac{PR}{P+R}$进行评估</p>
+<hr>
+<p>如果误差很大，排除模型的问题，除了调整超参（可训练参数之上的参数如$\lambda$），还可以尝试以下方法：<br>Overfitting(高variance): 去除冗余特征，获取更多训练集<br>Underfitting(高bias): 增加特征</p>
+<p>训练模型的好坏，还可以通过Learning curve来进行诊断（否则只能降维画图了）：<br><img src="http://i61.tinypic.com/212v1vl.jpg" alt=""><br>训练集的error会逐渐增加，cv集的error会逐渐减少，当两个函数比较平缓时，之间的间距太大就是高variance（同时说明还有训练空间），太小就是高bias。应该考虑采集数据的能力，来将间距提高到合适的位置。<br>可以考虑在已有真实数据的基础下，是否加上一定噪音能产生新的数据。特别是图像方面的问题。现在Amazon Mechanical Turk等地方也可以发布实验让人做采集数据。</p>
+<p>通常来说，一个问题会在数据采集到模型训练的过程中有多个子阶段，可能还不止一个阶段用到了机器学习。可以运用ceiling analysis来分析改进空间。<br>具体做法就是从最开始顺序地、逐阶段地用真实数据代替该阶段的输出，每次统计整个系统的准确率。那么每阶段的改进空间就是$(本阶段被代替后准确率-本阶段被代替前准确率)$</p>
+<hr>
+<p><strong>符号说明</strong><br>点号表示逐元素运算，$\mathbf{x}^.2 = \{x_1^2,\ x_2^2,\ \dots,\ x_N^2\}$<br>$X$输入矩阵，每行是一个输入矢量，size=(N*M)，$y$采样值，size=(M*1)，$\nu$均值</p>
+<hr>
+<p>待续:</p>
+<ol>
+<li>大规模数据的各种gradient(再仔细看看有没有遗漏)</li>
+<li>做法和注意事项(分条列出)的区分(原理融入其中?)</li>
+<li>完善符号说明？</li>
+<li>区分写出总结版和介绍版？</li>
+<li>统一一下n和m，视频里面n好像是特征数量而m是采样点数量</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/12/08/Game_Theory/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Game Theory(from Coursera)&#39;s Summary
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/16/Mathjax_installation/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Install Mathjax for Hexo Blog</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Machine_Learning_with_Andrew_Ng" data-title="Machine Learning (from Coursera) Summary" data-url="http://yoursite.com/2014/10/18/Machine_Learning_with_Andrew_Ng/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"fenixlin-hexo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Fenix Lin
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

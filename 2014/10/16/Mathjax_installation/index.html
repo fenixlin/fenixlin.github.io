@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Install Mathjax for Hexo Blog | Fenix Lin&#39;s Nest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="添加了一下Mathjax插件，添加方法里面的Readme已经说得很好了好像还是有些慢。准备有空再研究下韩冬同学的主要是后面机器学习方面的博客应该会写得很多吧……虽然Latex的写法还是有点不适应呢Latex参考$$f\left(x\right) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{\left(x-\mu\right)^2}{2\sigma^2}}$$
+Ma">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Install Mathjax for Hexo Blog">
+<meta property="og:url" content="http://yoursite.com/2014/10/16/Mathjax_installation/">
+<meta property="og:site_name" content="Fenix Lin's Nest">
+<meta property="og:description" content="添加了一下Mathjax插件，添加方法里面的Readme已经说得很好了好像还是有些慢。准备有空再研究下韩冬同学的主要是后面机器学习方面的博客应该会写得很多吧……虽然Latex的写法还是有点不适应呢Latex参考$$f\left(x\right) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{\left(x-\mu\right)^2}{2\sigma^2}}$$
+Ma">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Install Mathjax for Hexo Blog">
+<meta name="twitter:description" content="添加了一下Mathjax插件，添加方法里面的Readme已经说得很好了好像还是有些慢。准备有空再研究下韩冬同学的主要是后面机器学习方面的博客应该会写得很多吧……虽然Latex的写法还是有点不适应呢Latex参考$$f\left(x\right) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{\left(x-\mu\right)^2}{2\sigma^2}}$$
+Ma">
+
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars2.githubusercontent.com/u/4312139?v=2&amp;s=150" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Fenix Lin</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">My Tech Sumup for Computer Science. Welcome!</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/resume">简历</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/github.com/fenixlin" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/weibo.com/fenixl" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/www.zhihu.com/people/lin-jing-hao-17" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="/fenixlin@yandex.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Algorithm/" style="font-size: 10.00px;">Algorithm</a><a href="/tags/Coursera/" style="font-size: 20.00px;">Coursera</a><a href="/tags/Machine-Learning/" style="font-size: 10.00px;">Machine Learning</a><a href="/tags/Mathematics/" style="font-size: 10.00px;">Mathematics</a><a href="/tags/Summary/" style="font-size: 10.00px;">Summary</a><a href="/tags/hexo/" style="font-size: 20.00px;">hexo</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Fenix Lin</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars2.githubusercontent.com/u/4312139?v=2&amp;s=150" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Fenix Lin</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">My Tech Sumup for Computer Science. Welcome!</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/resume">简历</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/github.com/fenixlin" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/weibo.com/fenixl" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/www.zhihu.com/people/lin-jing-hao-17" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/fenixlin@yandex.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Mathjax_installation" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/10/16/Mathjax_installation/" class="article-date">
+  	<time datetime="2014-10-16T15:24:02.000Z" itemprop="datePublished">Oct 16th 14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Install Mathjax for Hexo Blog
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>添加了一下<a href="https://github.com/phoenixcw/hexo-renderer-mathjax" target="_blank" rel="external">Mathjax插件</a>，添加方法里面的Readme已经说得很好了<br>好像还是有些慢。准备有空再研究下<a href="http://www.winterland.me/2013/12/hexo-mathjax/" target="_blank" rel="external">韩冬同学的</a><br>主要是后面机器学习方面的博客应该会写得很多吧……虽然Latex的写法还是有点不适应呢<br><a href="http://www.lsv.ens-cachan.fr/~markey/LaTeX/doc/Companion-chapter8.pdf" target="_blank" rel="external">Latex参考</a><br>$$<br>f\left(x\right) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{\left(x-\mu\right)^2}{2\sigma^2}}<br>$$</p>
+<p>Mathjax和Markdown还是比较容易有冲突的，写公式的时候要注意：</p>
+<ul>
+<li>下划线前加上’\’</li>
+<li>大括号之类的Markdown保留字需要这样写：”\{“</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/10/18/Machine_Learning_with_Andrew_Ng/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Machine Learning (from Coursera) Summary
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/14/Build_Hexo_Blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello, Hexo Blog!</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Mathjax_installation" data-title="Install Mathjax for Hexo Blog" data-url="http://yoursite.com/2014/10/16/Mathjax_installation/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"fenixlin-hexo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Fenix Lin
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
