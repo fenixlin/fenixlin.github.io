@@ -11,7 +11,7 @@
 动态规划，核心在于定义”状态”及”状态转移方程”。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Algorithms of ACM Contest Summary">
-<meta property="og:url" content="http://yoursite.com/2015/03/22/Algorithms-of-ACM-Contest-Summary/">
+<meta property="og:url" content="http://fenixlin.github.io/2015/03/22/Algorithms-of-ACM-Contest-Summary/">
 <meta property="og:site_name" content="Fenix Lin's Nest">
 <meta property="og:description" content="(2015/07/19 更新BST)
 四五年没有再去好好温习ACM方面的东西了，不过这一块其实时不时还是会提到，姑且做个简陋的算法方面的总结吧~时间精力有限，能总结多少是多少了。这里写法同样是”复习用”。NOCOW会比我说得更加详细清楚:P
@@ -49,7 +49,7 @@
 		</hgroup>
 
 		
-		<p class="header-subtitle">My Tech Sumup for Computer Science. Welcome!</p>
+		<p class="header-subtitle">Computer Science can be simple. ^_^ Welcome! ^_^</p>
 		
 
 		
@@ -86,26 +86,24 @@
 					<nav class="header-menu">
 						<ul>
 						
-							<li><a href="/">主页</a></li>
+							<li><a href="/">Main Page</a></li>
 				        
-							<li><a href="/archives">所有文章</a></li>
+							<li><a href="/archives">Archives</a></li>
 				        
-							<li><a href="/resume">简历</a></li>
+							<li><a href="/resume">Resume</a></li>
 				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
 						<div class="social">
 							
-								<a class="github" target="_blank" href="/github.com/fenixlin" title="github">github</a>
+								<a class="github" target="_blank" href="https://github.com/fenixlin" title="github">github</a>
 					        
-								<a class="weibo" target="_blank" href="/weibo.com/fenixl" title="weibo">weibo</a>
+								<a class="weibo" target="_blank" href="http://weibo.com/fenixl" title="weibo">weibo</a>
 					        
-								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/lin-jing-hao-17" title="zhihu">zhihu</a>
 					        
-								<a class="zhihu" target="_blank" href="/www.zhihu.com/people/lin-jing-hao-17" title="zhihu">zhihu</a>
-					        
-								<a class="mail" target="_blank" href="/fenixlin@yandex.com" title="mail">mail</a>
+								<a class="mail" target="_blank" href="mailto:fenixlin@yandex.com" title="mail">mail</a>
 					        
 						</div>
 					</nav>
@@ -142,16 +140,16 @@
 			  <h1 class="header-author">Fenix Lin</h1>
 			</hgroup>
 			
-			<p class="header-subtitle">My Tech Sumup for Computer Science. Welcome!</p>
+			<p class="header-subtitle">Computer Science can be simple. ^_^ Welcome! ^_^</p>
 			
 			<nav class="header-menu">
 				<ul>
 				
-					<li><a href="/">主页</a></li>
+					<li><a href="/">Main Page</a></li>
 		        
-					<li><a href="/archives">所有文章</a></li>
+					<li><a href="/archives">Archives</a></li>
 		        
-					<li><a href="/resume">简历</a></li>
+					<li><a href="/resume">Resume</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -159,15 +157,13 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/github.com/fenixlin" title="github">github</a>
+						<a class="github" target="_blank" href="https://github.com/fenixlin" title="github">github</a>
 			        
-						<a class="weibo" target="_blank" href="/weibo.com/fenixl" title="weibo">weibo</a>
+						<a class="weibo" target="_blank" href="http://weibo.com/fenixl" title="weibo">weibo</a>
 			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/lin-jing-hao-17" title="zhihu">zhihu</a>
 			        
-						<a class="zhihu" target="_blank" href="/www.zhihu.com/people/lin-jing-hao-17" title="zhihu">zhihu</a>
-			        
-						<a class="mail" target="_blank" href="/fenixlin@yandex.com" title="mail">mail</a>
+						<a class="mail" target="_blank" href="mailto:fenixlin@yandex.com" title="mail">mail</a>
 			        
 				</div>
 			</nav>
@@ -178,7 +174,7 @@
   
     <div class="article-meta">
       <a href="/2015/03/22/Algorithms-of-ACM-Contest-Summary/" class="article-date">
-  	<time datetime="2015-03-22T12:55:37.000Z" itemprop="datePublished">Mar 22nd 15</time>
+  	<time datetime="2015-03-22T12:55:37.000Z" itemprop="datePublished">Mar 22nd 2015</time>
 </a>
     </div>
   
@@ -287,7 +283,7 @@
 <li>查找：递归查找出树根a，然后沿路将父节点全部置为a</li>
 <li>合并：要合并的两个节点分别查找出树根a,b，然后元素少的树根a父节点置为b</li>
 </ol>
-<p><strong>BST</strong><br>搜索树是一系列方便快速查找的数据结构。最简单的BST，左儿子小右儿子大，建树、插入、查找都是从树根开始的递归。删除则是该结点与左子树的最大结点互换后删除（因为这个结点不可能有两棵子树。如果换右子树最小也可以）<br><strong>AVL</strong><br>左右子树深度差最多是1。在BST的操作以外，插入完后往上一层算平衡度(左树高减右树高)，如果要进行平衡，看被插入的子子树相对该结点位置。如果路径是LL或RR就单旋，如果是RL或LR就双旋(比如先在儿子左旋，再在该结点右旋)。删除也一样。<br>每次插入至多只需要做一次单旋或双旋。删除删成链状的话可能要两次。不过不想写那么细节的话还是都检查并更新了吧。<br>所有操作平均及最坏情况都是O(logN)。旋转平均只需O(1)。<br><strong>Splay</strong><br>思路是将要访问的结点比较平衡地旋转(Splay)到树根，这样访问比较频繁的结点都在树根附近。和AVL一样是看结点、父结点和祖父结点的走向关系，LL/RR就单旋/连续单旋(Zig/Zig-Zig)，LR/RL就双旋(Zig-Zag)。插入/查找都是旋转该点到根节点。删除则是把替换前的父节点旋转到根节点(有其他算法变种)。分裂是把作为分裂界的结点旋转到树根后切掉左子树或右子树变成一大一小两棵树。合并的话两棵树必须一大一小，把小树的最大元素旋转到根然后合并。<br>虽然单次最坏情况可能有O(n)，均摊复杂度也是O(logN)。长远来看比AVL平均更快，实现逻辑比AVL简单，还支持合并和拆分，不过不能用于并行环境中。<br><strong>Red-Black</strong><br>和AVL树类似。【待补充】<br>平衡度要求没有AVL严格。所以插入和删除相比更快，而查找更慢。<br><strong>Treap</strong><br><strong>SBT</strong><br><strong>Binary Heap</strong><br><strong>Skew Heap</strong><br><strong>Leftist Heap</strong><br><strong>Fibonacci Heap</strong><br><strong>Binomial Heap</strong><br><strong>Trie</strong><br><strong>B &amp; B-</strong><br><strong>Hash Table</strong></p>
+<p><strong>BST</strong><br>搜索树是一系列方便快速查找的数据结构。最简单的BST，左儿子小右儿子大，建树、插入、查找都是从树根开始的递归。删除则是该结点与左子树的最大结点互换后删除（因为这个结点不可能有两棵子树。如果换右子树最小也可以）<br><strong>AVL</strong><br>左右子树深度差最多是1。在BST的操作以外，插入完后往上一层算平衡度(左树高减右树高)，如果要进行平衡，看被插入的子子树相对该结点位置。如果路径是LL或RR就单旋，如果是RL或LR就双旋(比如先在儿子左旋，再在该结点右旋)。删除也一样。<br>每次插入至多只需要做一次单旋或双旋。删除删成链状的话可能要两次。不过不想写那么细节的话还是都检查并更新了吧。<br>所有操作平均及最坏情况都是O(logN)。旋转平均只需O(1)。<br><strong>Splay</strong><br>思路是将要访问的结点比较平衡地旋转(Splay)到树根，这样访问比较频繁的结点都在树根附近。和AVL一样是看结点、父结点和祖父结点的走向关系，LL/RR就单旋/连续单旋(Zig/Zig-Zig)，LR/RL就双旋(Zig-Zag)。插入/查找都是旋转该点到根节点。删除则是把替换前的父节点旋转到根节点(有其他算法变种)。分裂是把作为分裂界的结点旋转到树根后切掉左子树或右子树变成一大一小两棵树。合并的话两棵树必须一大一小，把小树的最大元素旋转到根然后合并。<br>虽然单次最坏情况可能有O(n)，均摊复杂度也是O(logN)。长远来看比AVL平均更快，实现逻辑比AVL简单，还支持合并和拆分，不过不能用于并行环境中。<br><strong>Red-Black</strong><br>将结点分为红黑两类，所有空结点视为黑的叶节点，要求红结点必须连着黑结点，所有根到叶的路径黑结点数必须相同，而且根是黑结点。<br>插入时，若父结点和兄弟同红，把父结点和兄弟变黑，祖父变红，然后回溯考虑祖父，直到1.父节点和兄弟异色，类似AVL做单旋/双旋后旋上去的结点为黑，另外两结点为红；2.父结点为黑；3.或已经到了根节点应变为黑。<br>删除时，做完BST的交换和删除后，若被删结点与其儿子N一红一黑，把儿子涂黑放上来就好。如果都是黑，主要考虑五个点(N的兄弟S及其内外两个儿子)。若S及儿子全黑，变为P黑S红。若仅S内侧儿子(RL/LR)红，内侧儿子旋上来变黑S变红变最后一种情况。其他情况(S红/外侧或双儿子红)把S单旋上来，SP换色其他红变黑。<br>写起来略复杂，不过平衡度要求没有AVL严格。所以插入和删除相比更快，而查找更慢。<br><strong>Trie</strong><br>每个点表示一个字母，或者二进制里面一位。根为空，从根走到某结点表示一个单词或数字，并在末尾结点存其相应属性的树。数据稠密，长度不大或可以并行处理的情况下可能比Hash表表现的好而且不用考虑冲突或hash法。不过比Hash表更费空间。<br><strong>Suffix Tree</strong><br><strong>Hash Table</strong><br><strong>B &amp; B-</strong><br><strong>Treap</strong><br><strong>SBT</strong><br><strong>Binary Heap</strong><br><strong>Skew Heap</strong><br><strong>Leftist Heap</strong><br><strong>Fibonacci Heap</strong><br><strong>Binomial Heap</strong></p>
 <h2 id="数学&amp;几何(凸包等)">数学&amp;几何(凸包等)</h2>
 <h2 id="思路/基本功(二分答案/贪心/搜索/排序等)">思路/基本功(二分答案/贪心/搜索/排序等)</h2>
 <p><strong>排序算法</strong></p>
@@ -349,7 +345,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Algorithms-of-ACM-Contest-Summary" data-title="Algorithms of ACM Contest Summary" data-url="http://yoursite.com/2015/03/22/Algorithms-of-ACM-Contest-Summary/"></div>
+	<div class="ds-thread" data-thread-key="Algorithms-of-ACM-Contest-Summary" data-title="Algorithms of ACM Contest Summary" data-url="http://fenixlin.github.io/2015/03/22/Algorithms-of-ACM-Contest-Summary/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
