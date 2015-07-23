@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Game Theory(from Coursera)&#39;s Summary | Fenix Lin&#39;s Nest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近没事又跑到C站补了博弈论的公开课。其实讲得很少也很浅。不过这类内功修炼下还是有点感觉的，时不时会在论文中突然就出现个纳什均衡帕累托最优什么的呢。
+Concepts
+Strategy: 某个Player可以做的选择Action: 所有Player作出的Strategy的某个交集Best Response: 这名玩家在当前情况下得益最高的选择(可能有等值的好几个)Nash Equilibrium:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Game Theory(from Coursera)'s Summary">
+<meta property="og:url" content="http://fenixlin.github.io/2014/12/08/Game_Theory/">
+<meta property="og:site_name" content="Fenix Lin's Nest">
+<meta property="og:description" content="最近没事又跑到C站补了博弈论的公开课。其实讲得很少也很浅。不过这类内功修炼下还是有点感觉的，时不时会在论文中突然就出现个纳什均衡帕累托最优什么的呢。
+Concepts
+Strategy: 某个Player可以做的选择Action: 所有Player作出的Strategy的某个交集Best Response: 这名玩家在当前情况下得益最高的选择(可能有等值的好几个)Nash Equilibrium:">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Game Theory(from Coursera)'s Summary">
+<meta name="twitter:description" content="最近没事又跑到C站补了博弈论的公开课。其实讲得很少也很浅。不过这类内功修炼下还是有点感觉的，时不时会在论文中突然就出现个纳什均衡帕累托最优什么的呢。
+Concepts
+Strategy: 某个Player可以做的选择Action: 所有Player作出的Strategy的某个交集Best Response: 这名玩家在当前情况下得益最高的选择(可能有等值的好几个)Nash Equilibrium:">
+
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars2.githubusercontent.com/u/4312139?v=2&amp;s=150" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Fenix Lin</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Computer Science can be simple. ^_^ Welcome! ^_^</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Main Page</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+							<li><a href="/resume">Resume</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/fenixlin" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/fenixl" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/lin-jing-hao-17" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="mailto:fenixlin@yandex.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Algorithm/" style="font-size: 10.00px;">Algorithm</a><a href="/tags/Coursera/" style="font-size: 20.00px;">Coursera</a><a href="/tags/Machine-Learning/" style="font-size: 10.00px;">Machine Learning</a><a href="/tags/Mathematics/" style="font-size: 10.00px;">Mathematics</a><a href="/tags/Summary/" style="font-size: 10.00px;">Summary</a><a href="/tags/hexo/" style="font-size: 20.00px;">hexo</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Fenix Lin</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars2.githubusercontent.com/u/4312139?v=2&amp;s=150" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Fenix Lin</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Computer Science can be simple. ^_^ Welcome! ^_^</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Main Page</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+					<li><a href="/resume">Resume</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/fenixlin" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/fenixl" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/lin-jing-hao-17" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="mailto:fenixlin@yandex.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Game_Theory" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/12/08/Game_Theory/" class="article-date">
+  	<time datetime="2014-12-08T12:38:43.000Z" itemprop="datePublished">Dec 8th 2014</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Game Theory(from Coursera)&#39;s Summary
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coursera/">Coursera</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mathematics/">Mathematics</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近没事又跑到C站补了博弈论的公开课。其实讲得很少也很浅。不过这类内功修炼下还是有点感觉的，时不时会在论文中突然就出现个纳什均衡帕累托最优什么的呢。</p>
+<h2 id="Concepts">Concepts</h2>
+<p><strong>Strategy</strong>: 某个Player可以做的选择<br><strong>Action</strong>: 所有Player作出的Strategy的某个交集<br><strong>Best Response</strong>: 这名玩家在当前情况下得益最高的选择(可能有等值的好几个)<br><strong>Nash Equilibrium</strong>: 没有玩家愿意偏离的策略集(注意是情况已经出现，对方策略必定已知。当前情况下全是Best Response，没有明显更好的选择了)<br><strong>Strictly Dominant Strategy</strong>: 这个选择比其他选择在每一种情况下值都更优。被dominate的策略是可以直接扔掉不要的<br><strong>Weakly Dominant Strategy</strong>: 相比上面可以是某个更优其他同等。扔掉被它dominate的可能会连带扔走其中一个纳什均衡哦，虽然肯定不是最后一个)<br><strong>Pareto Optimality</strong>: 没有其他策略Pareto Dominate(某些得益更高，其他得益也至少相等)的策略</p>
+<a id="more"></a>
+<h2 id="Normal-Form_Games">Normal-Form Games</h2>
+<p>最简单的用表格表示的博弈<br><strong>Pure Strategy</strong><br>不带概率，选定某个策略<br><strong>Mixed Strategy</strong><br>Mixed Strategy就是在自己手上的几个Pure Strategy中叠加上概率分布。通过计算期望判断优劣。<br>这种情况下，一种纳什均衡，就要使得别人在自己的概率下没法区别他的策略。比如横向的策略乘以竖向的概率(该格子出现概率)，各行之间相等。<br>Mixed Strategy均衡并不包含Pure Strategy，因为Pure Strategy均衡的策略至少对于某个人来说明显更好，而不仅仅是相等。<br>Mixed Strategy中也有Strictly Dominant Strategy，比如两种策略中无论怎样的概率分布都比第三种策略的收益好。</p>
+<h2 id="Extensive-Form_Games">Extensive-Form Games</h2>
+<p>为了区分先后顺序，画成树状。<br><strong>Perfect information Extensive-Form Games</strong><br>知道完整的历史信息。每个点是一个独立的选择。所有点的选择的集合就是策略，纯策略数量就是($2^{选择点数量}$)。<br>一颗子树是一个Subgame。Subgame均衡的纳什均衡才可信(与Subgame不均衡的相比往往是在其他走不到的子树上有区别)。据此可以从叶节点倒推出均衡状况。<br><strong>Imerfect information Extensive-Form Games</strong><br>相比来说有了等价结点的概念，Player只能知道目前在某一类等价节点，无法区分具体位置</p>
+<h2 id="Repeated_Games">Repeated Games</h2>
+<p>近乎无限多次的博弈。<br>这个时候求收益方法 1.求均值的极限 2.求带(0,1)内指数加权和的极限<br>后者可以看作是早期的博弈比后期的博弈重要，也可以看作是博弈每轮都有个概率p在这轮结束。<br>虽然彻底的均衡也是一次游戏的纳什均衡，不过如果是通过加权和算的收益而且权p大于某个阈值，可以通过协商，制定惩罚方法，先合作用对双方来说都有更高收益的非均衡策略（权p太小，会导致单次偏离的收益比后面所有加起来的均衡收益极限都高）。<br>惩罚1 grim trigger strategies：一旦对方偏离一次，自己就永远偏离，回到纳什均衡。<br>惩罚2 tit for tat：对方偏离一次，下回合自己偏离一次，然后继续合作<br><strong>Folk’s Theorm</strong><br>不小于至少可以取得的(往往单次均衡中的)收益的收益值都enforceable。对各个Action施以概率分布，加起来可以取得的收益都是feasible。既是enforceable又是feasible就是某个纳什均衡中的值啦。</p>
+<h2 id="Bayesian_Games">Bayesian Games</h2>
+<p>同一个Action，Player有不同的收益，这里有一个变化概率的情况。可以看作每个Player在他的Game集中分布，或Player在他的类型集中分布。<br>如果只是一次游戏，本质和Mixed Strategy差不多，都是计算期望</p>
+<h2 id="Coalition_Games">Coalition Games</h2>
+<p>Player组队有组队的收益。<br>有两种推荐的所有玩家(不是某个组内)的收益分配方案</p>
+<ol>
+<li>Shapley Value，考虑所有组队顺序情况下单个人的贡献。即全部组队排列下这个人的边缘贡献和/全排列数。</li>
+<li>Core Value，合作收益分到每个子集，都不低于子集本身能取得的收益的分配方案(对于要么有收益要么没有的simple game，就是关键的不可或缺的Player分收益(不一定平分)，其他Player收益为0)</li>
+</ol>
+<hr>
+<p>下面是 Game Theory 2 的内容</p>
+<h2 id="Basis_and_Voting(Social_Choice)">Basis and Voting(Social Choice)</h2>
+<p>最好以“投票”这个场景来理解下面内容<br><strong>Linear Order</strong>: 下面提到这个词是指完备的、可传递的（即每个人对所有候选人都有完整的偏好顺序）<br><strong>Social Choice Function</strong>: Linear Order集（即所有人的偏好）映射出outcome集（某（几）个候选）<br><strong>Social Welfare Function</strong>: Linear Order集映射出Linear Order（偏好映射出全序）</p>
+<p>几个属性<br>Condorcet Consistency: 孔多塞胜者(两两对决)一定是最终胜者<br>【相对于Social Welfare Funcition】<br><strong>Pareto Efficiency</strong>: 全部人都一样的偏好对作为输入，最后结果也一定和输入一样<br><strong>Independent of Irrelevant Alternatives</strong>: 最后结果的偏好对，只取决于输入的中这两个人之间的偏好对（即维持AB之间偏好所有输入不变，结果不变）<br>【相对于Social Choice Function】<br><strong>Weak Pareto Efficienct</strong>: 全部人都更偏好于一对的某个，另一个一定不会被选<br><strong>Monotonicity</strong>: 保持对支持获胜者的所有偏好对输入，结果一定维持不变</p>
+<p><strong>Arrow’s Theorem</strong>: 三个以上候选人，同时满足PE和IIA的机制，一定有Dictator(他怎么选、怎么改，最终结果一定按照他的来，虽然他自身不一定知道)<br><strong>Muller-Satterthwaite theorem</strong>:WPE和Monotonicity的SCF必定dictatorial</p>
+<p>顺带提到几种投票方式：Plurality(一人一票), Cumulative rating(一人有限多选), Approval voting(一人无限多选), Plurality with elimination(末尾淘汰选多轮), Borda Rule(带权重选票), Successive Elimination(两两对决累计)</p>
+<h2 id="Mechanism_Design">Mechanism Design</h2>
+<p>Mechanism: Action到Outcome的映射方式。<br>Utility function: 每个agent的收益。”private”的话，和其他agent的$u(\theta)$无关。可以拆分输入outcome为choice和payment两部分(Tranferable  Mechanism)。前一部分也叫”Valuation function”。而有了payment，机制受害者就可以从获益者那里得到补偿。</p>
+<p>属性：<br><strong>Truthful Mechanism</strong>: agent的preference是怎样，他表达出来就怎样，说真话是dominant strategy(常见反例是borda rule中，最喜欢的选不上，为了次喜欢的而不是最讨厌的被选上，昧着心思投次喜欢的。可以观察单个agent能否操纵什么来判断)<br><strong>Direct Mechanism</strong>: 一轮结束，一次声明，没有秘密(一定知道agent类型)<br><strong>Pareto-efficient Mechanism</strong>: 所有Valuation function相加最大(注意没payment)<br><strong>Budged-balanced Mechanism</strong>: 所有payment相加为0。松弛为<em>weak</em>，则大于等于0。<br><strong>Individual-Rational Mechanism</strong>: 参与机制的收益期望大于等于0(ex-interim) / 一定大于0(ex-post)<br><strong>Revenue Maximization/Minimization</strong>: payment总额最大 / 最小化(大于等于0的情况下)<br><strong>Maxmin Fairness</strong>: 让收益最低的情况的收益额尽可能高。<br><strong>Price of Anarchy Minimization</strong>:  Price of Anarchy指最坏情况下，最优均衡下的Social Welfware与最坏均衡下的比率。最小化它来尽可能接近Efficient (PoA=1)的状况。</p>
+<p>理论：<br><strong>Revelation Principle</strong>: 所有social choice function都可以得到一个truthful, direct的机制实现（核心思想是这个机制本身就帮agent去cheat，最大化agent利益。注意将非T/D的机制转化为T/D的机制不一定能保留所有均衡态）。<br><strong>Gibbard-Satterthwaite’s Theorem</strong>: 如果Truthful对所有人所有情况都是dominant，机制必定Dictatorial（松弛Dominant为Bayesian-Nash均衡，或者用有结构的Preference就好了）</p>
+<h2 id="Vickery-Clarke-Groves_Mechanism">Vickery-Clarke-Groves Mechanism</h2>
+<p><strong>Groves Mechanism</strong>：选让utility总和最大的选项，i的payment是 其他人{没有i时的选项的函数-有i后总utility}，即 $h<em>i(\hat{v}</em>{-i})-\Sigma <em>{j\ne i}\hat{v_j}(x(\hat{v}))$<br><strong>VCG Mechanism</strong>：跟上面一样，选让utility总和最大的选项。payment是 其他人的{没有i时的总utility-有i后总utility}。即上面$h_i(\hat{v}</em>{-i})=max<em>x \{\Sigma </em>{j\ne i}\hat{v_j}(x)\}$。一般VCG收益大于零。<br><strong>Green-Laffont Theorem</strong>：所有人都可以有任意preference顺序的话，只有Groves Mechanism既effcient，又truthful。</p>
+<p><strong>VCG与ex-post individual rationality</strong>：要满足choice-set monotonicity(去掉任意agent不会增加新的选项)和No negative externalities(不考虑i做的选项不会让i的uitility变负)<br><strong>VCG与weakly budget balance</strong>：要满足no single agent effect(去掉i后不会必定导致总utility下降)</p>
+<p><strong>Myerson—Satterthwaite’s Theorem</strong>: buyer-seller问题上，存在一种buyer-seller分布，使得没有机制同时efficient, weakly budget balance和interim individual rationality</p>
+<h2 id="Auctions">Auctions</h2>
+<p>感觉就是讨论了一下Auction类的机制<br>Auction有很多种，包括常见的Bidder自己喊价格的English，Auctioneer抬价格的Japanese，Auctioneer降价格的Ducth，秘密出价(seal-bid)的First-price(付最高出价)，Second-price(付第二高出价)，All-pay(所有人付自己出价)。<br>对于bidder：其中，Second-price实质上是VCG，truth-telling是(weakly)dominant。用下面的理论，Japanese和English也类似，是dominant；first-price和Ducth不是，可以考虑参加拍卖的人数而相应降低出价，做赢的概率和出价的trade-off。value在正态独立分布下，合理的出价是$\frac{n-1}{n}v_i$<br>对于seller：上面revenue全部一样，见下面理论</p>
+<p><strong>Revenue Equivalence Theorem</strong>：bidder都是risk-neutral（愿意通过期望考虑问题），value同分布时：如果两个机制 均衡时分配结果一样，且value=0的人期望收益为0，这两个机制必定有同样的收入期望，每个agent的期望支出相同。</p>
+<p><strong>Optimal Auction</strong>：最大化卖家收入的拍卖。卖家可以通过牺牲efficiency(有出价不卖出去或者不卖给最高出价的人)，设reserve price来实现(前提是individual rational/risk-neutral和分布已知)。<br><strong>Virtual Valuation</strong>: $\Phi_i(v_i)=v_i-\frac{1-F_i(v_i)}{f_i(v_i)}$，上面是累积分布函数，下面是概率密度函数。如果他是单调增长的， 最好的reserve price就是V.V.=0的时候。（注意即使R.P.是分布下界，对可能出现的只有一个人的拍卖也有效）<br><strong>Myerson Theorem</strong>：Single-good下，direct机制里，Optimal Auction即把东西卖给V.V.最大的人，且V.V.最大的人支付第二高V.V.。</p>
+<hr>
+<h2 id="后记">后记</h2>
+<p>结果最后写起来更像是笔记而不是一个完整的故事哈哈<em>^_^</em>下次再努力吧。<br>这个公开课和我专业的知识有些偏差，不过回想起来呐，以前总是纠结为什么囚徒困境的均衡结果会是大家都要受轻刑，一个not efficient的，次差的结果。是不是人性的自私最终总会导致一个不太好的结局，引领社会走向黑暗？后来再学到Repeated Games，看到怎么建立协商的机制，来达到最终总体的最佳结果，茅塞顿开了呢。所谓的道德伦理，也是先贤们考虑到人性的自私，而建立起来的一种约束机制，引领我们的社会在Repeatted Games中走向更好的均衡吧。想想还是很感慨呐。</p>
+<p>Course 2本来是因为在百度做的内容比较偏广告竞价机制的设计，所以去看了一下的。不过机制这一块果然好大，Course 2本身也不是很有系统性，偏优秀机制的举例更多？并不是很有心思完整地梳理了，他日用到再补充吧:D</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/22/Algorithms-of-ACM-Contest-Summary/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Algorithms of ACM Contest Summary
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/18/Machine_Learning_with_Andrew_Ng/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Machine Learning (from Coursera) Summary</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Game_Theory" data-title="Game Theory(from Coursera)&#39;s Summary" data-url="http://fenixlin.github.io/2014/12/08/Game_Theory/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"fenixlin-hexo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Fenix Lin
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
