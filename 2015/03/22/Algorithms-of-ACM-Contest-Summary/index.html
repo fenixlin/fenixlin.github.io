@@ -5,26 +5,26 @@
   
   <title>Algorithms of ACM Contest Summary | Fenix Lin&#39;s Nest</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="(2015/08/03 更新LCA/RMQ，KMP)
+  <meta name="description" content="(2015/08/07 更新字符串匹配算法、状态压缩DP)
 四五年没有再去好好温习ACM方面的东西了，不过这一块其实时不时还是会提到，姑且做个简陋的算法方面的总结吧~时间精力有限，能总结多少是多少了。这里写法同样是”复习用”。NOCOW会比我说得更加详细清楚:P
 动态规划(背包/博弈/树状/字符串/状态压缩等)
-动态规划，核心在于定义”状态”及”状态转移方程”。">
+动态规划，核心在于定义”状态”及”状态转移方程”，能保证从任意状态开始都会产生该状态下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Algorithms of ACM Contest Summary">
 <meta property="og:url" content="http://fenixlin.github.io/2015/03/22/Algorithms-of-ACM-Contest-Summary/">
 <meta property="og:site_name" content="Fenix Lin's Nest">
-<meta property="og:description" content="(2015/08/03 更新LCA/RMQ，KMP)
+<meta property="og:description" content="(2015/08/07 更新字符串匹配算法、状态压缩DP)
 四五年没有再去好好温习ACM方面的东西了，不过这一块其实时不时还是会提到，姑且做个简陋的算法方面的总结吧~时间精力有限，能总结多少是多少了。这里写法同样是”复习用”。NOCOW会比我说得更加详细清楚:P
 动态规划(背包/博弈/树状/字符串/状态压缩等)
-动态规划，核心在于定义”状态”及”状态转移方程”。">
+动态规划，核心在于定义”状态”及”状态转移方程”，能保证从任意状态开始都会产生该状态下">
 <meta property="og:image" content="http://i57.tinypic.com/2czavls.jpg">
 <meta property="og:image" content="http://i60.tinypic.com/2wd4mrb.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Algorithms of ACM Contest Summary">
-<meta name="twitter:description" content="(2015/08/03 更新LCA/RMQ，KMP)
+<meta name="twitter:description" content="(2015/08/07 更新字符串匹配算法、状态压缩DP)
 四五年没有再去好好温习ACM方面的东西了，不过这一块其实时不时还是会提到，姑且做个简陋的算法方面的总结吧~时间精力有限，能总结多少是多少了。这里写法同样是”复习用”。NOCOW会比我说得更加详细清楚:P
 动态规划(背包/博弈/树状/字符串/状态压缩等)
-动态规划，核心在于定义”状态”及”状态转移方程”。">
+动态规划，核心在于定义”状态”及”状态转移方程”，能保证从任意状态开始都会产生该状态下">
 
   
   
@@ -208,10 +208,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><em>(2015/08/03 更新LCA/RMQ，KMP)</em></p>
+        <p><em>(2015/08/07 更新字符串匹配算法、状态压缩DP)</em></p>
 <p>四五年没有再去好好温习ACM方面的东西了，不过这一块其实时不时还是会提到，姑且做个简陋的算法方面的总结吧~时间精力有限，能总结多少是多少了。<br>这里写法同样是”复习用”。<a href="http://www.nocow.cn/index.php/%E9%A6%96%E9%A1%B5" target="_blank" rel="external">NOCOW</a>会比我说得更加详细清楚:P</p>
 <h2 id="动态规划(背包/博弈/树状/字符串/状态压缩等)">动态规划(背包/博弈/树状/字符串/状态压缩等)</h2>
-<p>动态规划，核心在于定义”状态”及”状态转移方程”。<br><a id="more"></a></p>
+<p>动态规划，核心在于定义”状态”及”状态转移方程”，能保证从任意状态开始都会产生该状态下的最优策略(Principle of Optimality)。<br><a id="more"></a></p>
 <p><strong>背包</strong><br>有限空间内放置各种价值不同资源(物品)的最优值问题。这个问题<a href="https://github.com/tianyicui/" target="_blank" rel="external">崔添翼大牛</a>在《背包九讲》里面讲得超清楚，简单概括一下好了。</p>
 <ol>
 <li>01背包：各种物品只有一件。$F[i,v]=max\{F[i-1,v],F[i-1,v-C_i]+W_i\}$，即选择取或不取。循环每件物品时，如倒序扫描DP数组，可以降低一维空间复杂度。</li>
@@ -246,7 +246,7 @@
 <p><strong>相关优化</strong></p>
 <ul>
 <li>滚动数组：因为动态规划方程中，最外层循环每次往往只需要用到上一次循环的数据，所以只开能够存下两次大循环的空间就好，而不是全部循环的空间。</li>
-<li>状态压缩：</li>
+<li>状态压缩：将本来需要多维表达的状态，压缩为一个某进制（一般就是二进制、三进制）的整数来表达，整数的每一位就是原来一个维度。这样好处在于思路清晰代码简洁，二进制还可以方便地通过为运算进行状态转移。常见于矩阵、图上的动态规划。</li>
 <li>单调队列：一般应用于状态转移中，要求旧状态带有”最大/最小”条件的问题。关键是发现可以抛弃掉的、更老的状态，作为单调队列可抛弃的状态。对于有区间限制的题目，可以将{状态值，状态位置}对建成单调双端队列，左限制右求最值。每次状态转移时就可以从单调队列中提取，而不必往前扫描。没有区间限制求第k大/k小的题目，若发现了可抛弃的状态，亦可构建一个单调序列，用二分查找提取(最长不下降子序列)。<a href="http://www.cnblogs.com/neverforget/archive/2011/10/13/ll.html" target="_blank" rel="external">见此总结</a></li>
 <li>优先队列/堆优化：</li>
 </ul>
@@ -299,7 +299,7 @@
 <li>Ukkeonen：【待补充】</li>
 <li>倍增：【待补充】</li>
 </ul>
-<p>因为Trie可进行前缀搜索，而后缀树又在Trie上存了所有后缀，还为后缀属于哪个字符串做了标识，因此可用于查找出现次数/重复次数/最长重复/最长回文/最长公共字串(两个字符串连起来做后缀树)等问题上。<br><strong>Binary Indexed Tree</strong><br><strong>Link-Cut Tree</strong><br><strong>Finger Tree</strong></p>
+<p>因为Trie可进行前缀搜索，而后缀树又在Trie上存了所有后缀，还为后缀属于哪个字符串做了标识，因此可用于查找出现次数/重复次数/最长重复/最长回文/最长公共字串(两个字符串连起来做后缀树)等问题上。<br><strong>Binary Indexed Tree</strong><br><strong>Link-Cut Tree</strong></p>
 <hr>
 <p>下面全部以小根堆为例，大根堆同理。除了基本的二叉堆没有合并操作外，其他堆结构基本都以合并操作为核心，插入等同合并，删除根等同合并子树，删除其他结点（注意这必须指定，堆本意就没打算查找最小结点以外的结点）则相当于把该节点的值改成无穷小，然后进行删除根操作（或者原地删除后合并子树并往上递归保证特定的堆性质）。<br>性能评价方面，堆查找最小都是O(1)，二叉堆没有合并且最坏O(N)，斜堆都是O(logN)的，左式堆常数上更优，二项堆插入均摊为了O(1)，Fibonacci堆删除以外都是O(1)。<br><strong>Binary Heap</strong><br>顶上是最小值，且每个子树都满足这个堆性质。用完全二叉树结构(数组存就好)，插入时插到最后然后上滤(递归地跟父结点比较)，删除时和队尾交换然后新根下滤，改小/改大分别则上滤/下滤。建堆则从最后一个非叶结点开始逐个下滤，直到根结点。<br><strong>Skew Heap</strong><br>二叉堆之余定义了特别的合并操作，无条件交换每层左右子树。合并时对于根小的堆A，其根作为新根，A右子树成为新左子树，然后递归A左子树和另一个堆的合并。<br>（非递归版合并：所有堆沿最右路径切片，形成的子树按堆根从小到大排序，每次最小堆变次小的堆左树，原左树变右树，然后排序继续）<br><strong>Leftist Heap/左偏树</strong><br>每个点记录到最近叶结点的距离，左子树的距离一定不小于右子树。合并时根小的堆A及其左子树保留，递归合并右子树和根大的堆，然后从下往上把不满足左偏性质的左右交换。<br><strong>Binomial Heap(Queue)</strong><br>每个二项堆实际是一个树序列(森林)，序列中i位置(中间可能有空位)是结点数为2^i的i叉树。合并时就相当于从序列低位到高位实行二进制加法，每棵树上的合并则是简单地让根值大的树直接作为根值小的树的子树(如果此前有进位，进位直接作为新堆该位的树)。可以通过在合并(包括插入和删除)时记录最小值所在的位置，从而让查找与其他堆一样是O(1)的。<br><strong>Fibonacci Heap</strong><br>核心思想是尽可能地延后各种操作。也是一个树序列(一般用双向链表表达序列和树每一层)。合并时宏观上一直合并到所有树大小不同(用一个以树大小为index的数组扫描)，微观上也是根大的直接做根小的子树。插入时直接放入序列不进行合并。改小内结点时，该结点为根的树放到序列上，然后mark父亲，父亲若mark过了，父亲为根的树也放上去然后再递归祖父。</p>
 <h2 id="数学&amp;几何(凸包等)">数学&amp;几何(凸包等)</h2>
@@ -319,9 +319,13 @@
 <li>Intro：开始采用快速排序算法进行排序,当递归达到一定深度时就改为堆排序来处理。</li>
 </ul>
 <p><strong>字符串匹配算法</strong></p>
+<p>设模式串P，待匹配串(文本串)T。匹配算法的核心思路都是出现匹配失败时，不要耿直地只移一位然后把匹配过的东西再扫一遍，而是利用对P的预处理，建立跳转表L，匹配失败时根据跳转表进行跳转。</p>
 <ul>
-<li>KMP：思路是匹配到某个位置失败了，可根据此时模式串后缀和前缀的相等关系跳过一段。为模式串p引入一个数组next，若next[i]=k，每次待匹配串和模式串的第i位匹配失败时，可继续递归匹配模式串的p[next[i]]位。优化后的KMP算法next数组构建举例如图。<br><img src="http://i60.tinypic.com/2wd4mrb.jpg" alt=""></li>
-<li>Sunday(<a href="http://blog.csdn.net/WINCOL/article/details/4795369" target="_blank" rel="external">http://blog.csdn.net/WINCOL/article/details/4795369</a>)</li>
+<li>KMP：思路是失败时，根据当下P已匹配串的后缀和前缀的相等关系跳过一段。L[i]=next[i]=k，每次T和P的第i位匹配失败时，可继续递归匹配P[L[i]]。优化后的KMP算法与L构建举例如图。<br><img src="http://i60.tinypic.com/2wd4mrb.jpg" alt=""></li>
+<li>Boyer-Moore：既考虑T的匹配失败字符(Bad Character)也考虑P的已匹配字符(Good Suffix)。考虑Bad——建二维表L，不匹配就跳至L[T的不匹配字母，在P未匹配部分中且离匹配失败位置最近]。考虑Good——不匹配就跳至L’[已匹配后缀在P中前一个出现的位置且后缀前一个字符(匹配失败位)不相等(若后缀没出现则部分的前缀匹配部分后缀亦可)]。每次跳转max{L, L’}位。<a href="http://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html" target="_blank" rel="external">见这里</a></li>
+<li>Horspool：L记录所有可能出现字母在与P最右的最小距离。从T左边开始，每次从P的右侧往左匹配，一旦发现不匹配，就跳L[T的对应P最右侧的字母]位，继续匹配。</li>
+<li>Sunday：同Horspool，唯一不同在于不匹配时跳L[T的对应P最右侧的字母“的下一个字母”]位。</li>
+<li>Aho–Corasick(AC自动机)：应用于有多个模式串可匹配的场合。所有模式串先建立一个Trie，每个是模式串结尾的结点都标记一下(方便判断输出什么)，然后BFS遍历Trie，将字母相同的的结点连接起来(也称失败指针)。实际扫描模式串进行匹配时，一旦某一个结点不能继续往下匹配，就根据失败指针转移到另一个根字母相同的子树上继续寻找匹配机会。</li>
 </ul>
 <p><strong>Hash Table</strong></p>
 <p><strong>搜索算法及技巧</strong></p>
@@ -342,6 +346,8 @@
 </ol>
 <p><strong>均摊时间复杂度分析(potential method)</strong></p>
 <p>算法可视化参考：<br><a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html" target="_blank" rel="external">https://www.cs.usfca.edu/~galles/visualization/Algorithms.html</a></p>
+<hr>
+<p>被提到过但是觉得使用频率并不高的算法，此处暂不再进行学习总结，包括：<br>Rabin-Karp, Finger Tree,</p>
 
       
     </div>
