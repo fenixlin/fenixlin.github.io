@@ -5,27 +5,36 @@
   
   <title>ACM Contest Algorithms In 10,000 words | Fenix Lin&#39;s Nest</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="(2015/09/13 更新STL、搜索、哈希)
-四五年没有再去好好温习ACM方面的东西了，不过这一块其实时不时还是会提到，姑且做个简陋的算法方面的总结吧~时间精力有限，能总结多少是多少了。这里写法同样是”复习用”。NOCOW会比我说得更加详细清楚:P
+  <meta name="description" content="(2015/09/16 更新树状数组)
+很多年没有再接触ACM方面的算法了，不过这一块其实不时还会提到，在此姑且做个简陋的总结，望诸位不吝赐教^_^。
 动态规划
-动态规划，核心在于定义”状态”及”状态转移方程”，能保证从任意状态开始都会产生该状态下的最优策略(Principle of Optima">
+动态规划，核心在于定义”状态”及”状态转移方程”，能保证从任意状态开始都会产生该状态下的最优策略(Principle of Optimality)。
+基本技巧
+
+定义状态，可以定义”花费刚好为v时的最优值”和”花费至多为v时的最优值”两种">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ACM Contest Algorithms In 10,000 words">
 <meta property="og:url" content="http://fenixlin.github.io/2015/03/22/Algorithms-of-ACM-Contest-Summary/">
 <meta property="og:site_name" content="Fenix Lin's Nest">
-<meta property="og:description" content="(2015/09/13 更新STL、搜索、哈希)
-四五年没有再去好好温习ACM方面的东西了，不过这一块其实时不时还是会提到，姑且做个简陋的算法方面的总结吧~时间精力有限，能总结多少是多少了。这里写法同样是”复习用”。NOCOW会比我说得更加详细清楚:P
+<meta property="og:description" content="(2015/09/16 更新树状数组)
+很多年没有再接触ACM方面的算法了，不过这一块其实不时还会提到，在此姑且做个简陋的总结，望诸位不吝赐教^_^。
 动态规划
-动态规划，核心在于定义”状态”及”状态转移方程”，能保证从任意状态开始都会产生该状态下的最优策略(Principle of Optima">
+动态规划，核心在于定义”状态”及”状态转移方程”，能保证从任意状态开始都会产生该状态下的最优策略(Principle of Optimality)。
+基本技巧
+
+定义状态，可以定义”花费刚好为v时的最优值”和”花费至多为v时的最优值”两种">
 <meta property="og:image" content="http://i57.tinypic.com/o5rdch.jpg">
 <meta property="og:image" content="http://i60.tinypic.com/2wd4mrb.jpg">
 <meta property="og:image" content="http://i58.tinypic.com/2588q4l.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ACM Contest Algorithms In 10,000 words">
-<meta name="twitter:description" content="(2015/09/13 更新STL、搜索、哈希)
-四五年没有再去好好温习ACM方面的东西了，不过这一块其实时不时还是会提到，姑且做个简陋的算法方面的总结吧~时间精力有限，能总结多少是多少了。这里写法同样是”复习用”。NOCOW会比我说得更加详细清楚:P
+<meta name="twitter:description" content="(2015/09/16 更新树状数组)
+很多年没有再接触ACM方面的算法了，不过这一块其实不时还会提到，在此姑且做个简陋的总结，望诸位不吝赐教^_^。
 动态规划
-动态规划，核心在于定义”状态”及”状态转移方程”，能保证从任意状态开始都会产生该状态下的最优策略(Principle of Optima">
+动态规划，核心在于定义”状态”及”状态转移方程”，能保证从任意状态开始都会产生该状态下的最优策略(Principle of Optimality)。
+基本技巧
+
+定义状态，可以定义”花费刚好为v时的最优值”和”花费至多为v时的最优值”两种">
 
   
   
@@ -209,15 +218,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><em>(2015/09/13 更新STL、搜索、哈希)</em></p>
-<p>四五年没有再去好好温习ACM方面的东西了，不过这一块其实时不时还是会提到，姑且做个简陋的算法方面的总结吧~时间精力有限，能总结多少是多少了。<br>这里写法同样是”复习用”。<a href="http://www.nocow.cn/index.php/%E9%A6%96%E9%A1%B5" target="_blank" rel="external">NOCOW</a>会比我说得更加详细清楚:P</p>
+        <p><em>(2015/09/16 更新树状数组)</em></p>
+<p>很多年没有再接触ACM方面的算法了，不过这一块其实不时还会提到，在此姑且做个简陋的总结，望诸位不吝赐教^_^。</p>
 <h2 id="动态规划">动态规划</h2>
-<p>动态规划，核心在于定义”状态”及”状态转移方程”，能保证从任意状态开始都会产生该状态下的最优策略(Principle of Optimality)。<br><a id="more"></a><br>基本技巧</p>
+<p>动态规划，核心在于定义”状态”及”状态转移方程”，能保证从任意状态开始都会产生该状态下的最优策略(Principle of Optimality)。</p>
+<p>基本技巧</p>
 <ul>
 <li>定义状态，可以定义”花费刚好为v时的最优值”和”花费至多为v时的最优值”两种；</li>
 <li>记录最优方案，则开多一个数组记录来源状态，及状态转移选择(如果来源状态不暗含的话)；</li>
 <li>求方案总数，最小值等，则将max改成sum、min；</li>
-<li>求第K优解，则在状态数组中多开一维(就是每个状态变一个队列)，记录前K优解。</li>
+<li>求第K优解，则在状态数组中多开一维(就是每个状态变一个队列)，记录前K优解。<a id="more"></a>
+</li>
 </ul>
 <p><strong>背包</strong><br>有限空间内放置各种价值不同资源(物品)的最优值问题。这个问题<a href="https://github.com/tianyicui/" target="_blank" rel="external">崔添翼大牛</a>在《背包九讲》里面讲得超清楚，简单概括一下好了。</p>
 <ol>
@@ -300,12 +311,11 @@
 <li>倍增算法(Suffix Array)：后缀数组即构建一个数组存储按字典序降序排第i的后缀的开头位置。每轮对S[j:j+2^i]这样定长2^i的子串根据字典序排序，排序方法根据上一轮结果对每个子串的两个关键字进行基数排序即可(无第二关键字就给最高或最低优先级)，到最后2^i&gt;Len(S)的时候就是各后缀的后缀数组了。O(nlogn)</li>
 <li>DC3算法(Suffix Array)：S最后先加一个间隔符得S’，然后S’[1],S’[2]  (注意S’从0开始)补间隔符至长度是3的倍数后拼在一起得S*，然后对所有S*[j:j+2]进行基数排序，这样就得到了S中所有从3j+1和3j+2开始的后缀之间的顺序R。而3j开始的后缀之间的顺序可利用R和第一个字母进行基数排序得出R’。最后通过头字母和R与R’的比较，类似归并排序一样得到全序即可。O(n)，代码复杂度略甚于倍增算法。</li>
 </ul>
-<p><strong>Binary Indexed Tree / 树状数组</strong></p>
-<p><strong>Link-Cut Tree</strong></p>
+<p><strong>Binary Indexed Tree / 树状数组</strong><br>一个可以动态维护的用于求序列信息(一般是求和，要求信息可减，见后文)的树。设结点的序号i(i&gt;=1)的二进制末尾0的个数是k，那么结点i就汇总前面K=2^k个结点的信息。求和时sum(i,j)=sum(1,j)-sum(1,i)，求sum(1,i)从i开始倒着来汇总就好了因为K必定不减，修改则是和sum相反从前往后就好。以上是一个数轴的情况，此方法可以组合应用于多个维度。</p>
 <hr>
 <p>下面全部以小根堆为例，大根堆同理。除了基本的二叉堆没有合并操作外，其他堆结构基本都以合并操作为核心，插入等同合并，删除根等同合并子树，删除其他结点（注意这必须指定，堆本意就没打算查找最小结点以外的结点）则相当于把该节点的值改成无穷小，然后进行删除根操作（或者原地删除后合并子树并往上递归保证特定的堆性质）。<br>性能评价方面，堆查找最小都是O(1)，二叉堆没有合并且最坏O(N)，斜堆都是O(logN)的，左式堆常数上更优，二项堆插入均摊为了O(1)，Fibonacci堆删除以外都是O(1)。<br><strong>Binary Heap</strong><br>顶上是最小值，且每个子树都满足这个堆性质。用完全二叉树结构(数组存就好)，插入时插到最后然后上滤(递归地跟父结点比较)，删除时和队尾交换然后新根下滤，改小/改大分别则上滤/下滤。建堆则从最后一个非叶结点开始逐个下滤，直到根结点。<br><strong>Skew Heap</strong><br>二叉堆之余定义了特别的合并操作，无条件交换每层左右子树。合并时对于根小的堆A，其根作为新根，A右子树成为新左子树，然后递归A左子树和另一个堆的合并。<br>（非递归版合并：所有堆沿最右路径切片，形成的子树按堆根从小到大排序，每次最小堆变次小的堆左树，原左树变右树，然后排序继续）<br><strong>Leftist Heap/左偏树</strong><br>每个点记录到最近叶结点的距离，左子树的距离一定不小于右子树。合并时根小的堆A及其左子树保留，递归合并右子树和根大的堆，然后从下往上把不满足左偏性质的左右交换。<br><strong>Binomial Heap(Queue)</strong><br>每个二项堆实际是一个树序列(森林)，序列中i位置(中间可能有空位)是结点数为2^i的i叉树。合并时就相当于从序列低位到高位实行二进制加法，每棵树上的合并则是简单地让根值大的树直接作为根值小的树的子树(如果此前有进位，进位直接作为新堆该位的树)。可以通过在合并(包括插入和删除)时记录最小值所在的位置，从而让查找与其他堆一样是O(1)的。<br><strong>Fibonacci Heap</strong><br>核心思想是尽可能地延后各种操作。也是一个树序列(一般用双向链表表达序列和树每一层)。合并时宏观上一直合并到所有树大小不同(用一个以树大小为index的数组扫描)，微观上也是根大的直接做根小的子树。插入时直接放入序列不进行合并。改小内结点时，该结点为根的树放到序列上，然后mark父亲，父亲若mark过了，父亲为根的树也放上去然后再递归祖父。</p>
 <h2 id="数学&amp;计算几何">数学&amp;计算几何</h2>
-<p><strong>凸包</strong></p>
+<p>这块内容过于分散，暂且不作总结。</p>
 <h2 id="思路/基本功">思路/基本功</h2>
 <p><strong>排序算法</strong></p>
 <p>ACM非常少用到，姑且就当算法课基础复习了</p>
@@ -363,9 +373,9 @@
 <li>来自<code>&lt;functional&gt;</code>：包括plus,minus,greater等等，用以自定义函数对象，放到algorithm里面用。</li>
 </ul>
 <hr>
-<p>计划改善中：悬线法动态规划、Binary Indexed Tree、Link-Cut Tree、凸包、二分答案、贪心</p>
 <p>算法可视化参考：<br><a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html" target="_blank" rel="external">https://www.cs.usfca.edu/~galles/visualization/Algorithms.html</a></p>
-<p>以下是被提到过但是觉得使用频率并不高的算法，或者本人尚不熟悉未能抽出时间学习的算法。因为毕竟退役了，这方面也不能花太多时间深究，因此暂不再进行学习总结，包括：<br>Rabin-Karp, Finger Tree, Pair Heap, Blossom算法, Sollin算法, 度限制最小生成树, k小生成树, 均摊时间复杂度的分析方法(potential method), 差分约束系统, 模拟退火, ELFHash, Scapegoat Tree, 后缀树的Ukkeonen方法, 次小生成树/K短路，随机调整搜索，Dancing Links，遗传算法，蚁群算法。</p>
+<p>更清楚的算法总结Wiki参见<a href="http://www.nocow.cn/index.php/%E9%A6%96%E9%A1%B5" target="_blank" rel="external">NOCOW</a>。</p>
+<p>以下是被提到过但是觉得使用频率并不高的算法，或者本人尚不熟悉未能抽出时间学习的算法。鉴于时间有限，暂不再进行学习总结，包括：<br>Rabin-Karp, Finger Tree, Pair Heap, Blossom算法, Sollin算法, 度限制最小生成树, k小生成树, 均摊时间复杂度的分析方法(potential method), 差分约束系统, 模拟退火, ELFHash, Scapegoat Tree, 后缀树的Ukkeonen方法, 次小生成树/K短路，随机调整搜索，Dancing Links，遗传算法，蚁群算法，块状链表，树链剖分、Link-Cut Tree、悬线法动态规划、凸包、二分答案、贪心。</p>
 
       
     </div>
